@@ -45,3 +45,6 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+Cover/Back/*.jpg
+Cover/Front/*.jpg
+Icon/*.jpg
