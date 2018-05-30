@@ -31,20 +31,33 @@ while True:
     game_pspversion = ''
     game_regionduplicates = ''
     for title in pars_title:
-        if title.text == 'Region': game_region = pars_name[y].text
-        if title.text == 'Language(s)': game_language = pars_name[y].text
-        if title.text == 'Genre': game_genre = pars_name[y].text
-        if title.text == 'Publishing Company': game_company = pars_name[y].text
-        if title.text == 'Date': game_date = pars_name[y].text
-        if title.text == 'Filename': game_Filename = pars_name[y].text
-        if title.text == 'Dir Name': game_dirname = pars_name[y].text
-        if title.text == 'UMD Serial': game_umdserial = pars_name[y].text
-        if title.text == 'ISO Size': game_isosize = pars_name[y].text
-        if title.text == 'ISO Crc32': game_isocrc32 = pars_name[y].text
-        if title.text == 'UMD Version': game_umdversion = pars_name[y].text
-        if title.text == 'PSP Version': game_pspversion = pars_name[y].text
-        if title.text == 'Region Duplicate(s)': game_regionduplicates = pars_name[y].text
-        if save_images:
+        if title.text == 'Region':
+            game_region = pars_name[y].text
+        elif title.text == 'Language(s)':
+            game_language = pars_name[y].text
+        elif title.text == 'Genre':
+            game_genre = pars_name[y].text
+        elif title.text == 'Publishing Company':
+            game_company = pars_name[y].text
+        elif title.text == 'Date':
+            game_date = pars_name[y].text
+        elif title.text == 'Filename':
+            game_Filename = pars_name[y].text
+        elif title.text == 'Dir Name':
+            game_dirname = pars_name[y].text
+        elif title.text == 'UMD Serial':
+            game_umdserial = pars_name[y].text
+        elif title.text == 'ISO Size':
+            game_isosize = pars_name[y].text
+        elif title.text == 'ISO Crc32':
+            game_isocrc32 = pars_name[y].text
+        elif title.text == 'UMD Version':
+            game_umdversion = pars_name[y].text
+        elif title.text == 'PSP Version':
+            game_pspversion = pars_name[y].text
+        elif title.text == 'Region Duplicate(s)':
+            game_regionduplicates = pars_name[y].text
+        elif save_images:
             if title.text == 'Boxart Front Cover':
                 if 'showpspfc.php' in str(pars_name[y]):
                     cover_front_url = 'http://advanscene.com/html/Releases/showpspfc.php?id=%s' % (str(i).zfill(4))
@@ -63,7 +76,7 @@ while True:
                             out.write(data)
                         r.release_conn()
                 pass
-            if title.text == 'Boxart Back Cover':
+            elif title.text == 'Boxart Back Cover':
                 if 'showpspbc.php' in str(pars_name[y]):
                     cover_back_url = 'http://advanscene.com/html/Releases/showpspbc.php?id=%s' % (str(i).zfill(4))
                     cover_back_page = requests.get(cover_back_url)
@@ -81,7 +94,7 @@ while True:
                             out.write(data)
                         r.release_conn()
                 pass
-            if title.text == 'Game Icon':
+            elif title.text == 'Game Icon':
                 icon_url = 'http://advanscene.com/html/Releases/impic.php?id=%s' % (str(i).zfill(4))
                 http = urllib3.PoolManager()
                 #icon = session.get(icon_url)
